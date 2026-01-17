@@ -255,7 +255,7 @@ main { position:relative; z-index:1; padding:120px max(8vw,64px) 80px; }
 .section__lede{ font-size:16px; }
 
 .grid{ display:grid; gap:20px; }
-.work-grid{ grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.work-grid{ grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
 
 .card{
   border-radius: var(--radius); overflow:hidden; background:var(--panel);
@@ -358,6 +358,16 @@ main { position:relative; z-index:1; padding:120px max(8vw,64px) 80px; }
   .section--alt{ padding:32px 20px; }
   .footer{ flex-direction:column; align-items:flex-start; gap:14px; padding:32px 20px; }
 }
+select {
+  background-color: #0e1020;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+option {
+  background-color: #0e1020;
+  color: #ffffff;
+}
 
 /* ------------------------------------------------------------------
    Accessibility & preferences
@@ -380,6 +390,34 @@ main { position:relative; z-index:1; padding:120px max(8vw,64px) 80px; }
 @media (forced-colors: active) {
   .pill, .btn { forced-color-adjust: none; }
 }
+/* Thank you popup */
+.modal__dialog.thankyou {
+  text-align: center;
+  max-width: 420px;
+}
+
+.trim-bar {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.trim-bar span {
+  display: block;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, #7c3aed, #06b6d4);
+  animation: trimMove 2.5s infinite ease-in-out;
+}
+
+@keyframes trimMove {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(150%); }
+  100% { transform: translateX(-100%); }
+}
+
 
 /* ------------------------------------------------------------------
    Low-performance mode (add class .low-perf on <html> or <body>)
